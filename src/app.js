@@ -8,14 +8,16 @@ function guessNumber(answer, guess) {
 
 }
 
-function randomNumber(inputs) {
-    const put=result.answer(inputs);
+function randomNumber() {
+    const put=result.answer();
     return put;
 }
 
 function guess() {
-
+   const guessed=guess();
+   return guessed;
 }
 
 exports.guessNumber = guessNumber;
 exports.randomNumber=randomNumber;
+exports.guess=guess;
