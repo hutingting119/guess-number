@@ -1,26 +1,21 @@
-class CompareNumber {
-    
-    static guess(guess) {
-        const answers = answer.split('');
-        const guesses = guess.split('');
 
-        const rightDigitCount=guesses.filter(c=>answers.includes(c)).length;
-        let a=guesses.filter(c=>answers.indexOf(c)===guesses.indexOf(c)).length;
-
-        let b=rightDigitCount-a;
+const  app= require('../app');
 
 
-        return `${a}A${b}B`;
 
-
+class Guess {
+    static guess(input){
+        const answer=app.randomNumber();
+        return app.guessNumber(answer, input);
     }
+    
 
 
 
 }
 
 
-module.exports = CompareNumber;
+module.exports = Guess;
 
 
 
