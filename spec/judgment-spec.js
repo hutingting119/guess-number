@@ -1,6 +1,5 @@
 'use strict'
-const app = require('../src/app');
-
+const judgment = require('../src/models/judgment');
 describe('guess-number', () => {
     const input = '1234';
     it('judgeNumber', ()=> {
@@ -18,7 +17,7 @@ describe('guess-number', () => {
                 expectResult: '0A0B'
             }
         ].forEach(item=> {
-            expect(app.guessNumber(input, item.number)).toEqual(item.expectResult);
+            expect(judgment.judNumber(input, item.number)).toEqual(item.expectResult);
         });
     })
 })

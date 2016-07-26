@@ -1,6 +1,4 @@
 'use strict'
-//const app = require('../src/app');
-
 const AnswerGenerator = require('../src/models/answerGenerator');
 const Guess = require('../src/models/guess');
 
