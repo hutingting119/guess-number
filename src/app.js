@@ -10,27 +10,28 @@ Please input your number(6):`);
 let answer = answerGenerator.answer() + '';
 let count = 5;
 rl.on('line', (input)=> {
+    
     receipt(answer, input, count);
     count--;
 })
 
 function receipt(answer, input, count) {
+    const inputs = input.split('');
+    let tag = 0;
+    for (const input of inputs) {
+        if (inputs.indexOf(input) != inputs.lastIndexOf(input)) {
+            tag = 1;
+        }
+    }
     let put = judgment.judNumber(answer, input);
-    const inputs=input.split('')[0];
-    let tag=0;
-  for(let i=0;i<inputs.length-1;i++){
-      for(let j=1;j<inputs.length;j++){
-      if(inputs[i]===inputs[j]){
-          tag=1;
-      }}
-  }
+
     if (count === 0) {
         console.log("Game Over");
         rl.close();
     }
-     else if (tag===1) {
-      console.log('Cannot input duplicate numbers!');
-     }
+    else if (tag === 1 || inputs.length != 4) {
+        console.log('Cannot input duplicate numbers!');
+    }
 
     else if (put === '4A0B') {
         console.log("Congratulations!");
